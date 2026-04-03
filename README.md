@@ -5,8 +5,9 @@ This is a minimal MLOps-style batch job that calculates a rolling mean and gener
 
 ## Project Structure
 ```
-ML_Intern_/
-├── data.csv              # Input dataset (OHLCV)
+primetrade-mlops-batch-pipeline/
+├── dataset/
+│   └── data.csv          # Input dataset (OHLCV)
 ├── config.yaml           # Configuration file (seed, window, version)
 ├── run.py                # Main batch job script
 ├── requirements.txt      # Python dependencies

@@ -2,7 +2,7 @@
 
 ## 1. Project Folder Structure
 ```
-ML_Intern_/
+primetrade-mlops-batch-pipeline/
 ├── dataset/
 │   └── data.csv          # Input dataset (OHLCV)
 ├── config.yaml           # Configuration file (seed, window, version)
