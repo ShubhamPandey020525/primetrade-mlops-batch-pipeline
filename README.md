@@ -22,7 +22,20 @@ ML_Intern_/
 
 ### 1. Set up the Environment
 The project requires Python 3.9+ and dependencies listed in `requirements.txt`.
-You can use Miniconda to create the environment:
+You can use `venv` or `conda` to create the environment:
+
+**Using venv (Standard Python):**
+```bash
+python -m venv venv
+# Windows
+.\venv\Scripts\activate
+# Linux/Mac
+source venv/bin/activate
+
+pip install -r requirements.txt
+```
+
+**Using Conda:**
 ```bash
 conda create -n ML_intern python=3.9
 conda activate ML_intern
@@ -34,28 +47,29 @@ Run the following command to process the dataset:
 ```bash
 python run.py --input dataset/data.csv --config config.yaml --output metrics.json --log-file run.log
 ```
+This will:
+- Read `dataset/data.csv`.
+- Use settings from `config.yaml`.
+- Generate `metrics.json` (summary) and `run.log` (detailed logs).
+
+---
 
 ## How to Run with Docker
 
-### 1. Prerequisite: Install Docker Desktop
-If you get an error like `'docker' is not recognized as an internal or external command`, it means Docker is not installed or not in your system's PATH.
-- **Download and install Docker Desktop** for Windows from [docker.com](https://www.docker.com/products/docker-desktop/).
-- Ensure **Docker Desktop is running** (check the tray icon).
-- **Restart your terminal** after installation to refresh the environment variables.
+This is the **easiest and recommended way** for recruiters to test the pipeline without worrying about Python versions.
 
-### 2. Build the Docker Image
+### 1. Prerequisite
+Ensure [Docker Desktop](https://www.docker.com/products/docker-desktop/) is installed and running.
+
+### 2. Build and Run in One Step
 ```bash
+# Build the image
 docker build -t mlops-task .
-```
 
-### 3. Run the Docker Container
-```bash
+# Run the container
 docker run --rm mlops-task
 ```
-The container will:
-- Process the dataset.
-- Generate `metrics.json` and `run.log`.
-- Print the final metrics JSON to stdout.
+The container will process the data and print the final `metrics.json` directly to your terminal.
 
 ## Expected Outputs
 
