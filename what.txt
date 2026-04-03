@@ -1,0 +1,27 @@
+Functional Requirements:
+- The program must be a batch job written in Python.
+- CLI execution format: `python run.py --input data.csv --config config.yaml --output metrics.json --log-file run.log`.
+- No hard-coded paths should be used in the logic; all must come from CLI or config.
+- Config validation: Must contain `seed`, `window`, and `version`.
+- Data validation: Must handle missing files, invalid formats, empty files, and missing 'close' column.
+- Rolling Mean: Calculate using the `window` size from config on the 'close' column.
+- Signal: Binary signal (1 if close > rolling_mean, else 0). Handle first window-1 rows by excluding them from signal computation.
+- Metrics calculation: `rows_processed` (total rows), `signal_rate` (mean of valid signals), and `latency_ms` (total job time).
+- Output: `metrics.json` must be written in both success and failure cases with specific keys.
+- Logging: Use Python's logging module to track execution steps and errors in `run.log`.
+- Dockerization: Must build with `docker build -t mlops-task .` and run with `docker run --rm mlops-task`.
+- Determinism: Use `numpy.random.seed(seed)` to ensure reproducibility.
+
+Expected Outputs:
+- metrics.json (Structured JSON with specific success/error formats).
+- run.log (Detailed logs of every step).
+- Final metrics JSON printed to stdout at the end of execution.
+
+Technical Terms:
+- Rolling Mean: A sliding window average of data points.
+- Signal: A binary indicator (0 or 1) based on a specific price condition.
+- Metrics: Measurements used to evaluate system performance.
+- Logging: Systematic tracking of application events.
+- Latency: The time taken for the job to complete in milliseconds.
+- Docker Container: A lightweight, portable environment for running applications consistently.
+- Config File Usage: Decoupling settings from code for better flexibility and reproducibility.

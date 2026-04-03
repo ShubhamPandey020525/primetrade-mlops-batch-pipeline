@@ -1,0 +1,117 @@
+Simple Flow (Step-by-Step)
+
+START
+  │
+  ▼
+Load config.yaml
+(read seed, window, version)
+  │
+  ▼
+Validate config values
+  │
+  ▼
+Load data.csv
+  │
+  ▼
+Validate dataset
+(check file not empty, "close" column exists)
+  │
+  ▼
+Calculate Rolling Mean
+(using window from config)
+  │
+  ▼
+Generate Signal
+if close > rolling_mean → 1
+else → 0
+  │
+  ▼
+Compute Metrics
+rows_processed
+signal_rate
+latency_ms
+  │
+  ▼
+Save metrics.json
+  │
+  ▼
+Write run.log
+(all execution steps)
+  │
+  ▼
+Print result to stdout
+  │
+  ▼
+END
+
+
+Docker Execution Flow
+
+User runs command
+docker run mlops-task
+        │
+        ▼
+Container starts
+        │
+        ▼
+Python run.py executes
+        │
+        ▼
+Pipeline runs (config → csv → processing)
+        │
+        ▼
+metrics.json created
+run.log created
+        │
+        ▼
+Results printed
+        │
+        ▼
+Container stops
+
+
+
+Data Processing Logic (Core Logic)
+
+close_prices
+      │
+      ▼
+Rolling Mean (window=5)
+      │
+      ▼
+Compare
+close > rolling_mean ?
+      │
+ ┌────┴────┐
+ │         │
+Yes       No
+ │         │
+signal=1  signal=0
+      │
+      ▼
+Compute signal_rate
+
+
+
+Complete System Flow
+
+config.yaml
+      │
+      ▼
+run.py
+      │
+      ▼
+data.csv → validation
+      │
+      ▼
+rolling mean calculation
+      │
+      ▼
+signal generation
+      │
+      ▼
+metrics calculation
+      │
+ ┌────┴───────┐
+ ▼            ▼
+metrics.json  run.log

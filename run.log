@@ -1,0 +1,21 @@
+2026-04-03 17:22:29,824 - mlops_job - INFO - Job start timestamp: 2026-04-03 17:22:29
+2026-04-03 17:22:29,825 - mlops_job - INFO - Config loaded + validated (seed=42/window=5/version=v1)
+2026-04-03 17:22:29,864 - mlops_job - INFO - Rows loaded: 10000
+2026-04-03 17:22:29,865 - mlops_job - INFO - Processing step: computing rolling mean with window=5
+2026-04-03 17:22:29,866 - mlops_job - INFO - Processing step: generating binary signal
+2026-04-03 17:22:29,868 - mlops_job - INFO - Metrics summary: {'version': 'v1', 'rows_processed': 10000, 'metric': 'signal_rate', 'value': 0.4991, 'latency_ms': 45, 'seed': 42, 'status': 'success'}
+2026-04-03 17:22:29,869 - mlops_job - INFO - Job end + status: success
+2026-04-03 17:22:32,876 - mlops_job - INFO - Job start timestamp: 2026-04-03 17:22:32
+2026-04-03 17:22:32,876 - mlops_job - INFO - Config loaded + validated (seed=42/window=5/version=v1)
+2026-04-03 17:22:32,915 - mlops_job - INFO - Rows loaded: 10000
+2026-04-03 17:22:32,917 - mlops_job - INFO - Processing step: computing rolling mean with window=5
+2026-04-03 17:22:32,918 - mlops_job - INFO - Processing step: generating binary signal
+2026-04-03 17:22:32,918 - mlops_job - INFO - Metrics summary: {'version': 'v1', 'rows_processed': 10000, 'metric': 'signal_rate', 'value': 0.4991, 'latency_ms': 43, 'seed': 42, 'status': 'success'}
+2026-04-03 17:22:32,920 - mlops_job - INFO - Job end + status: success
+2026-04-03 17:23:43,055 - mlops_job - INFO - Job start timestamp: 2026-04-03 17:23:43
+2026-04-03 17:23:43,057 - mlops_job - INFO - Config loaded + validated (seed=42/window=5/version=v1)
+2026-04-03 17:23:43,091 - mlops_job - INFO - Rows loaded: 10000
+2026-04-03 17:23:43,091 - mlops_job - INFO - Processing step: computing rolling mean with window=5
+2026-04-03 17:23:43,091 - mlops_job - INFO - Processing step: generating binary signal
+2026-04-03 17:23:43,093 - mlops_job - INFO - Metrics summary: {'version': 'v1', 'rows_processed': 10000, 'metric': 'signal_rate', 'value': 0.4991, 'latency_ms': 39, 'seed': 42, 'status': 'success'}
+2026-04-03 17:23:43,094 - mlops_job - INFO - Job end + status: success
